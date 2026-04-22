@@ -8,6 +8,8 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from "./pages/Profile";
 
 const App=()=> {
   return (
@@ -22,6 +24,15 @@ const App=()=> {
         </Route>
          <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+         <Route
+         path="/profile"
+         element={
+          <ProtectedRoute>
+            <Profile />
+           </ProtectedRoute>
+           }
+           />
+
          <Route path="*" element={<NotFound />} />
 
       </Routes>
