@@ -1,11 +1,14 @@
-
-
-import React from 'react'
+import Hero from "../components/Hero";
+import FeaturedCategories from "../components/FeaturedCategories";
+import FeaturedProducts from "../components/FeaturedProducts";
 
 const Home = () => {
   return (
-    <div>
-      <h1 className='text-3xl font-bold'>Home Page</h1>
+    <div className='space-y-20'>
+     <Hero />
+      <FeaturedCategories />
+      <FeaturedProducts />
+
     </div>
   )
 }
