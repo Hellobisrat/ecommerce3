@@ -1,0 +1,35 @@
+{
+  "name": "ecommerce3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\"\"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hellobisrat/ecommerce3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hellobisrat/ecommerce3/issues"
+  },
+  "homepage": "https://github.com/Hellobisrat/ecommerce3#readme",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^9.2.1",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^4.2.4"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
+    "lucide-react": "^1.8.0",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.1.0"
+  }
+}
