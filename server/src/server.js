@@ -4,6 +4,7 @@ import cors from 'cors';
 import authRoutes from "./routes/authRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
 
 
@@ -21,6 +22,7 @@ app.use("/api/products", productRoutes);
 app.get('/api/health',(req,res)=>{
   res.json({status:'OK'})
 })
+app.use("/api/admin", adminRoutes);
 
 const PORT =process.env.PORT || 5000;
 

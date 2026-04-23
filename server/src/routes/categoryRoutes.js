@@ -1,4 +1,6 @@
 import express from "express";
+import { protect } from "../middlewares/authMiddleware.js";
+import { adminOnly } from "../middlewares/adminMiddleware.js";
 import {
   createCategory,
   getCategories,
@@ -7,7 +9,7 @@ import {
 
 const router = express.Router();
 
-router.post("/", createCategory);
+router.post("/", protect, adminOnly, createCategory);
 router.get("/", getCategories);
 router.get("/:id/products", getCategoryProducts);
 
