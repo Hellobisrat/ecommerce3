@@ -1,12 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { ShoppingCart, User } from "lucide-react";
-
+import {useSelector,useDispatch} from 'react-redux';
+import { logout } from "../store/authSlice.js";
 export default function Navbar() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = localStorage.getItem("user");
-
+  const {user}= useSelector((state)=>state.auth)
   const handleLogout = () => {
-    localStorage.removeItem("user");
+    dispatch(logout)
     navigate("/login");
   };
 
