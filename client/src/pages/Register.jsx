@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import AuthLayout from "../layouts/AuthLayout";
-
+import { useDispatch } from "react-redux";
+import {registerUser} from "../store/authSlice.js"
 export default function Register() {
   const [form, setForm] = useState({
     name: "",
     email: "",
     password: "",
   });
+  const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ export default function Register() {
       return;
     }
 
-    toast.success("Account created (UI only)");
+    dispatch(registerUser(form))
   };
 
   return (

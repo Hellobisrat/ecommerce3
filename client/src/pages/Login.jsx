@@ -2,10 +2,11 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import AuthLayout from "../layouts/AuthLayout";
-
+import { useDispatch,useSelector } from "react-redux";
+import { loginUser } from "../store/authSlice.js";
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
-
+  const dispatch = useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -14,7 +15,7 @@ export default function Login() {
       return;
     }
 
-    toast.success("Login successful (UI only)");
+    dispatch(loginUser(form));
   };
 
   return (

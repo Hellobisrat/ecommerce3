@@ -1,7 +1,14 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import ProductCard from '../components/ProductCard';
 import {productsData} from '.../data/products.js'
+import { useDispatch } from 'react-redux';
+import {fetchProducts} from '../store/productSlice.js'
+import ProductCard from '../components/ProductCard';
 
+useEffect(()=>{
+  dispatchEvent(fetchProducts())
+
+},[dispatch])
 const Products = () => {
   const [sort,setSort]=useState("default");
 
@@ -53,8 +60,8 @@ const Products = () => {
             </select>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {sortedProducts.map((product)=>(
-            <ProductCard key={product.id} product={product}/>
+          {Products.map((product)=>(
+            <ProductCard key={product._id} product={product}/>
           ))}
         </div>
       </main>

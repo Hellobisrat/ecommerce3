@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/cartSlice.js";
 
 const ProductCard = ({product}) => {
   return (
@@ -14,6 +15,12 @@ const ProductCard = ({product}) => {
       <p className="text-gray-600">${product.price}</p>
 
     </Link>
+     <button
+        onClick={() => dispatch(addToCart(product))}
+        className="mt-3 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition"
+      >
+         Add to Cart
+      </button>
     </div>
   )
 }
