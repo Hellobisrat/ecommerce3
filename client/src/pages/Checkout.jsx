@@ -12,6 +12,19 @@ const Checkout = () => {
     0
   );
 
+  const handlePayment = async () => {
+  try {
+    const res = await api.post("/payment/create-checkout-session", {
+      items,
+    });
+
+    window.location.href = res.data.url;
+  } catch (err) {
+    toast.error("Payment failed");
+  }
+};
+
+
   const placeOrder = async()=>{
     try {
       await api.post('/orders',{
@@ -35,10 +48,10 @@ const Checkout = () => {
         <p className="text-xl mb-4">Total:${total.toFixed(2)}</p>
 
          <button
-          onClick={placeOrder}
+          onClick={handlePayment}
           className="bg-black text-white px-6 py-3 rounded-lg"
         >
-          Place Order
+          Proceed to payment
         </button>
 
       </div>
