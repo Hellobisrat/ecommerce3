@@ -18,7 +18,10 @@ import EditCategory from "./pages/admin/EditCategory";
 import AdminRoute from "./components/AdminRoute";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCancel from "./pages/PaymentCancel";
-
+import ShippingAddress from "./pages/checkout/ShippingAddress";
+import ShippingMethod from "./pages/checkout/ShippingMethod";
+import ReviewOrder from "./pages/checkout/ReviewOrder";
+import Checkout from "./pages/Checkout";
 
 const App=()=> {
   return (
@@ -79,7 +82,10 @@ const App=()=> {
 <Route path="/payment-success" element={<PaymentSuccess />} />
 <Route path="/payment-cancel" element={<PaymentCancel />} />
 
-
+<Route path="/checkout/address" element={<ShippingAddress />} />
+<Route path="/checkout/shipping-method" element={<ShippingMethod />} />
+<Route path="/checkout/review" element={<ReviewOrder />} />
+<Route path="/checkout/payment" element={<Checkout />} />
 
 
 

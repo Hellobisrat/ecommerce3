@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const { items } = useSelector((state) => state.cart);
+  const { shippingAddress, shippingMethod } = useSelector((state) => state.checkout);
+
   const navigate = useNavigate();
 
   const total = items.reduce(
@@ -16,6 +18,9 @@ const Checkout = () => {
   try {
     const res = await api.post("/payment/create-checkout-session", {
       items,
+      shippingAddress,
+      shippingMethod,
+
     });
 
     window.location.href = res.data.url;
