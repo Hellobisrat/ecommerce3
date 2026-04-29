@@ -12,6 +12,10 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import EditProduct from "./pages/admin/EditProduct";
 import AdminRoute from "./components/AdminRoute";
+import AdminCategories from "./pages/admin/AdminCategories";
+import AddCategory from "./pages/admin/AddCategory";
+import EditCategory from "./pages/admin/EditCategory";
+import AdminRoute from "./components/AdminRoute";
 
 
 const App=()=> {
@@ -43,7 +47,33 @@ const App=()=> {
                 </AdminRoute>
               }
               />
-              
+              <Route
+  path="/admin/categories"
+  element={
+    <AdminRoute>
+      <AdminCategories />
+    </AdminRoute>
+  }
+/>
+
+<Route
+  path="/admin/categories/new"
+  element={
+    <AdminRoute>
+      <AddCategory />
+    </AdminRoute>
+  }
+/>
+
+<Route
+  path="/admin/categories/:id"
+  element={
+    <AdminRoute>
+      <EditCategory />
+    </AdminRoute>
+  }
+/>
+
 
 
 
