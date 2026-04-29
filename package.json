@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
-  "server:dev": "cd server && npm run dev",
-  "client:dev": "cd client && npm run dev",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hellobisrat/ecommerce3.git"
@@ -30,6 +30,7 @@
     "@reduxjs/toolkit": "^2.11.2",
     "lucide-react": "^1.8.0",
     "react-redux": "^9.2.0",
-    "react-toastify": "^11.1.0"
+    "react-toastify": "^11.1.0",
+    "stripe": "^22.1.0"
   }
 }
