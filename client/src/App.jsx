@@ -10,6 +10,9 @@ import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
+import EditProduct from "./pages/admin/EditProduct";
+import AdminRoute from "./components/AdminRoute";
+
 
 const App=()=> {
   return (
@@ -32,6 +35,17 @@ const App=()=> {
            </ProtectedRoute>
            }
            />
+           <Route
+              path="/admin/products/:id"
+              element={
+                <AdminRoute>
+                  <EditProduct />
+                </AdminRoute>
+              }
+              />
+              
+
+
 
          <Route path="*" element={<NotFound />} />
 
