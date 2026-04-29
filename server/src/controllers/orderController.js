@@ -2,11 +2,15 @@ import Order from '../models/Order.js'
 
 export const placeOrder = async(req,res)=>{
   try {
-    const {items,total}=req.body;
+    const { items, total, shippingAddress, shippingMethod } = req.body;
+
     const order = await Order.create({
       user:req.user._id,
       items,
       total,
+      shippingAddress,
+      shippingMethod,
+
     })
     res.this.status(201).json(order)
   } catch (error) {
